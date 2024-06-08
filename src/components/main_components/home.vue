@@ -39,7 +39,7 @@ const description = "As a frontend developer, I specialize in crafting immersive
 
 function viewResume() {
    var link = document.createElement("a");
-   link.href = "/src/assets/files/JohnMarvelous_S_Diaz Resume.pdf";
+   link.href = "https://drive.google.com/file/d/1FD-jLYJqIkqHwtXPglh2Wik6SN76mMYu/view?usp=drive_link";
    link.download = "JohnMarvelous_S_Diaz_Resume.pdf";
    document.body.appendChild(link);
    link.click();
