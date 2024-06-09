@@ -1,35 +1,39 @@
 <template>
-  <div class="w-full h-auto flex justify-center items-center pt-8 py-4">
+  <div class="fixed w-full h-auto flex justify-center items-center pt-8 py-4 drop-blur z-[1001]">
     <div class="flex">
-      <span class="text-3xl font-bold font-inconsolata text-tprimary">
+      <span class="text-3xl font-bold font-inconsolata text-tprimary cursor-pointer" @click="scrollToSection('home')">
         {{ title }}
       </span>
     </div>
 
     <div class="w-auto flex mx-40">
-      <span class="text-hover text-lg font-inconsolata text-tprimary mx-4 cursor-pointer" v-for="items in tabs">
-        {{ items.text }}</span>
+      <span @click="scrollToSection(item.sectionId)"
+        class="text-hover text-lg font-inconsolata text-tprimary mx-4 cursor-pointer" v-for="item in tabs">
+        {{ item.text }}
+      </span>
     </div>
 
     <div class="w-auto flex">
-      <a v-bind:href="items.link" target="_blank" v-for="items in socials" :key="items.icon">
-        <Icon class="icon size-7 mx-3" :class="items.class" :icon="items.icon"></Icon>
+      <a v-bind:href="item.link" target="_blank" v-for="item in socials" :key="item.icon">
+        <Icon class="icon size-7 mx-3" :class="item.class" :icon="item.icon"></Icon>
       </a>
     </div>
 
   </div>
-
 </template>
 
 <script setup>
 import { Icon } from '@iconify/vue';
+import { defineEmits } from 'vue';
+
+const emit = defineEmits();
 
 const title = "</JohnMarvelous>";
 
 const tabs = [
-  { text: "About Me" },
-  { text: "Projects" },
-  { text: "Technologies" },
+  { text: "Projects", sectionId: "projects" },
+  { text: "Technologies", sectionId: "technologies" },
+  { text: "About Me", sectionId: "about" },
 ];
 
 const socials = [
@@ -38,6 +42,10 @@ const socials = [
   { icon: "skill-icons:github-light", class: "rounded-lg", link: "https://github.com/JohnMarvelousDiaz" },
   { icon: "logos:facebook", class: "rounded-full", link: "https://www.facebook.com/jm2d8" },
 ];
+
+const scrollToSection = (sectionId) => {
+  emit('scrollTo', sectionId);
+};
 </script>
 
 <style scoped>
@@ -56,5 +64,9 @@ const socials = [
 .dark-mode {
   background-color: black;
   color: white;
+}
+
+.drop-blur {
+  backdrop-filter: blur(5px)
 }
 </style>

@@ -3,6 +3,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Tiny5&display=swap');
 
 
-body{
+body {
     @apply font-sans tracking-wide;
+    overflow-x: hidden;
 }
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    @apply bg-primary;
+}
+
+body::-webkit-scrollbar-thumb {
+    @apply bg-secondary;
+    border-radius: 10px;
+    border: 3px solid transparent;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    @apply bg-tprimary
+}
+
+.button-bg {
+    background-image: linear-gradient(300deg, #8e60d6, #22a3c7, #35d3ff);
+}
+
+.button-bg:hover {
+    box-shadow: 0 0 10px #ffffff;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.button:hover {
+    box-shadow: 0 0 10px #ffffff;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.shadow-custom {
+    box-shadow: 0 0 12px #8e60d6;
+    animation: shadowMove 2s infinite alternate;
+}
+
+
+@keyframes shadowMove {
+    0% {
+        box-shadow: 0 0 12px #8e60d6;
+    }
+
+    20% {
+        box-shadow: 0 0 12px #22a3c7;
+    }
+
+    40% {
+        box-shadow: 0 0 12px #72ff6a;
+    }
+
+    60% {
+        box-shadow: 0 0 12px #72ff6a;
+    }
+
+    80% {
+        box-shadow: 0 0 12px #22a3c7;
+    }
+
+    100% {
+        box-shadow: 0 0 12px #8e60d6;
+    }
+}
+
