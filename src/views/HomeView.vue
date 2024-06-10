@@ -8,7 +8,7 @@
       <navbar @scrollTo="scrollToSection" />
       <home id="home"/>
       <projects id="projects" />
-      <technologies id="technologies" />
+      <skills id="skills" />
       <about id="about" />
       <div :style="cursorStyle" class="glow"></div>
     </div>
@@ -21,7 +21,7 @@ import navbar from "@/components/main_components/navbar.vue";
 import home from "@/components/main_components/home.vue";
 import about from "@/components/main_components/about.vue";
 import projects from "@/components/main_components/projects.vue";
-import technologies from "@/components/main_components/technologies.vue";
+import skills from "@/components/main_components/skills.vue";
 import Toast from '@/components/tabs/toast.vue'
 
 const cursorX = ref(0);
@@ -84,16 +84,16 @@ const scrollToSection = (sectionId) => {
 <style scoped>
 .glow {
   position: absolute;
-  width: 90px;
-  height: 90px;
-  background: rgba(114, 255, 106, 0.075);
+  width: 300px;
+  height: 300px;
+  background: rgba(114, 255, 106, 0.05);
   border-radius: 50%;
   pointer-events: none;
   mix-blend-mode: difference;
   transition: transform 0.1s ease-out;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  box-shadow: 0 0 100px 100px rgba(114, 255, 106, 0.075);
+  box-shadow: 0 0 100px 100px rgba(114, 255, 106, 0.05);
 }
 
 .back-to-top {

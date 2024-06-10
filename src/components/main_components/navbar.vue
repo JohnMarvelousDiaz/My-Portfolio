@@ -15,7 +15,7 @@
 
     <div class="w-auto flex">
       <a v-bind:href="item.link" target="_blank" v-for="item in socials" :key="item.icon">
-        <Icon class="icon size-7 mx-3" :class="item.class" :icon="item.icon"></Icon>
+        <Icon class="icon size-7 mx-3 filter grayscale" :class="item.class" :icon="item.icon"></Icon>
       </a>
     </div>
 
@@ -32,7 +32,7 @@ const title = "</JohnMarvelous>";
 
 const tabs = [
   { text: "Projects", sectionId: "projects" },
-  { text: "Technologies", sectionId: "technologies" },
+  { text: "Skills", sectionId: "skills" },
   { text: "About Me", sectionId: "about" },
 ];
 
@@ -50,6 +50,7 @@ const scrollToSection = (sectionId) => {
 
 <style scoped>
 .icon:hover {
+  @apply filter-none;
   box-shadow: 0 0 12px #ffffff;
   transform: scale(1.2);
   transition: transform 0.3s ease;

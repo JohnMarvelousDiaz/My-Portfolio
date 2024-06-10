@@ -15,18 +15,16 @@
          <div class="w-[570px] flex flex-col gap-y-2 mb-12">
             <span class="text-sm text-tprimary">{{ description }}</span>
          </div>
-         <a href="https://drive.google.com/file/d/1FD-jLYJqIkqHwtXPglh2Wik6SN76mMYu/view?usp=drive_link" target="_blank">
-            <button type="button"
-               class="w-max h-auto flex items-center px-5 py-3 rounded-full text-tprimary button-bg">
+         <a href="https://drive.google.com/file/d/1FD-jLYJqIkqHwtXPglh2Wik6SN76mMYu/view?usp=drive_link"
+            target="_blank">
+            <button type="button" class="w-max h-auto flex items-center px-5 py-3 rounded-full text-tprimary button-bg">
                View Resume <Icon class="ml-2"
                   icon="streamline:money-graph-arrow-increase-ascend-growth-up-arrow-stats-graph-right-grow"></Icon>
             </button>
          </a>
       </div>
-      <div class="image h-max mt-24 rounded-lg">
-         <transition name="fade" mode="out-in">
-            <img class="rounded-lg" :key="currentIndex" :src="currentImage" :alt="altText" />
-         </transition>
+      <div class="image w-[800px] h-max flex items-center mt-24 rounded-lg">
+         <img :class="['rounded-lg', 'shadow-custom', 'transition-opacity', fadeClass]" :key="currentIndex" :src="currentImage" :alt="altText" />
       </div>
    </div>
 </template>
@@ -48,11 +46,16 @@ const images = [
 const altText = ref('Slideshow Image');
 const currentIndex = ref(0);
 const currentImage = ref(images[currentIndex.value]);
+const fadeClass = ref('');
 
 const startSlideShow = () => {
    setInterval(() => {
-      currentIndex.value = (currentIndex.value + 1) % images.length;
-      currentImage.value = images[currentIndex.value];
+      fadeClass.value = 'opacity-0';
+      setTimeout(() => {
+         currentIndex.value = (currentIndex.value + 1) % images.length;
+         currentImage.value = images[currentIndex.value];
+         fadeClass.value = 'opacity-100';
+      }, 500);
    }, 5000);
 };
 
@@ -65,7 +68,7 @@ onMounted(() => {
 .animated-text {
    background-image: linear-gradient(45deg, #8e60d6, #22a3c7, #72ff6a);
    background-size: 200% 200%;
-   animation: gradientAnimation 1s ease infinite;
+   animation: gradientAnimation 3s ease infinite;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
@@ -73,30 +76,26 @@ onMounted(() => {
 .image:hover {
    transform: scale(1.1);
    transition: transform 0.3s ease;
-   box-shadow: 0 0 10px #ffffff;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-   transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-   opacity: 0.1;
+.transition-opacity {
+   transition: opacity 0.5s ease;
 }
 
 @keyframes gradientAnimation {
    0% {
       background-position: 0% 50%;
+      text-shadow: 0 0 10px #8d60d680;
    }
 
    50% {
       background-position: 100% 50%;
+      text-shadow: 0 0 10px #72ff6a80;
    }
 
    100% {
       background-position: 0% 50%;
+      text-shadow: 0 0 10px #22a3c780;
    }
 }
 </style>

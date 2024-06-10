@@ -39,7 +39,7 @@
     width: 450px;
     height: 550px;
     border-radius: 20px;
-    border: 2px solid transparent;
+    border: 4px solid transparent;
     animation: moving-border 4s infinite;
 }
 </style>

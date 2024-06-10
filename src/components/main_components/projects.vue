@@ -91,7 +91,7 @@ import RMO from '@/assets/project_images/RMO.png'
 import Weather1 from '@/assets/project_images/Weather1.jpg'
 import Weather2 from '@/assets/project_images/Weather2.jpg'
 
-const RMO_Text = "The Research Management Office System is designed to streamline and enhance the efficiency of research and managing proposal within the RMO. Utilizing Vue.js and Tailwind CSS for the front-end and PHP-Laravel for the back-end."
+const RMO_Text = "The Research Proposal Management System is designed to streamline and enhance the efficiency of research and managing proposal within the RMO. Utilizing Vue.js and Tailwind CSS for the front-end and PHP-Laravel for the back-end."
 
 const Caps_Text = "The BulSU CICT Appointment System is designed to streamline and enhance the efficiency of scheduling and managing appointments within the BulSU CICT. Utilizing React.js for the front-end and Google Firebase for the back-end."
 
