@@ -15,7 +15,7 @@
          <div class="w-[570px] flex flex-col gap-y-2 mb-12">
             <span class="text-sm text-tprimary">{{ description }}</span>
          </div>
-         <a href="https://drive.google.com/file/d/1FD-jLYJqIkqHwtXPglh2Wik6SN76mMYu/view?usp=drive_link"
+         <a href="https://drive.google.com/file/d/1Lxay7MVFyaJUUaBTF9bb6xSfxK55JX85/view?usp=drive_link"
             target="_blank">
             <button type="button" class="w-max h-auto flex items-center px-5 py-3 rounded-full text-tprimary button-bg">
                View Resume <Icon class="ml-2"
